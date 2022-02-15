@@ -1,5 +1,5 @@
 # DocGenerator(Document Generation Tool)
-### There are no plans to release the code :(
+### There's no plans to release the code :(
 
 ## Contents
 
