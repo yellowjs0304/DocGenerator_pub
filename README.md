@@ -164,7 +164,8 @@ results 폴더 내 generate_poly_image.ipynb 참고
 
 ### Sample image
 
-<img src="imgs/sample.jpg"/>
+<img src="imgs/sample_1.jpg"/>
+<img src="imgs/sample_2.png"/>
 
 ## Maintainer
 R&D 조정센터-알고리즘팀/제이
