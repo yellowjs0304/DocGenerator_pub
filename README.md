@@ -1,7 +1,5 @@
 # DocGenerator(Document Generation Tool)
 
-[![pipeline status](https://gitlab.com/twinsoda/twinreader/docgenerator/badges/main/pipeline.svg)](https://gitlab.com/twinsoda/twinreader/docgenerator/-/commits/main)
-
 ## Contents
 
   * [Documentation](#documentation)
