@@ -1,4 +1,6 @@
 # DocGenerator(Document Generation Tool)
+    
+    There's no plan for sharing project 😢
 
 ## Contents
 
@@ -27,7 +29,7 @@
 
 ## Documentation
 
-Notion [HERE](https://www.notion.so/agilesoda/Document-Generation-Tool-f97ef09464784a3db789c06a13410107).
+Notion [HERE]
 
 ## Usage
 ### Requirements
