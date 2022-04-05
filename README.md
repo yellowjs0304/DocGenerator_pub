@@ -176,10 +176,10 @@ tools 폴더 내 generate_poly_image.ipynb 참고
 ### Sample image
 
 <img src="imgs/sample.png"/>   
-<img src="imgs/sample_1.jpg"/>   
+<img src="imgs/sample_1.png"/>   
 
 
 ## Maintainer
-R&D 조정센터-알고리즘 팀/제이 (jshwang@agilesoda.ai)
+R&D 조정센터-알고리즘 팀/제이
 
 +) This repo used CLOVA AI SynthTIGER | [Paper](https://arxiv.org/abs/2107.09313) | [Documentation](https://clovaai.github.io/synthtiger/)
