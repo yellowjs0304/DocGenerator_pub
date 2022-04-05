@@ -1,5 +1,6 @@
 # DocGenerator(Document Generation Tool)
-### There's no plans to release the code :(
+
+[![pipeline status](https://gitlab.com/twinsoda/twinreader/docgenerator/badges/main/pipeline.svg)](https://gitlab.com/twinsoda/twinreader/docgenerator/-/commits/main)
 
 ## Contents
 
@@ -11,6 +12,7 @@
     + [Structure](#structure)
     + [GT text](#gt-text)
     + [Drawing Bounding Box](#drawing-bounding-box)
+    + [Error log](#error-log)
     + [Sample image](#sample-image)
   * [Maintainer](#maintainer)
 
@@ -19,11 +21,15 @@
 
 **Feb 03, 2022**: Initial Upload.   
 **Feb 08, 2022**: Add Checkbox function.   
-**Feb 11, 2022**: Add environment yaml.
+**Feb 11, 2022**: Add environment yaml.   
+**Mar 30, 2022**: Add new template(ID card, Driver License, Passport).   
+**Mar 31, 2022**: Add functions for sentence with spaces(like TwinReader STD)    
+**Apr 05, 2022**: Add new template(Receipt)    
+
 
 ## Documentation
 
-Notion
+Notion [HERE](https://www.notion.so/agilesoda/Document-Generation-Tool-f97ef09464784a3db789c06a13410107).
 
 ## Usage
 ### Requirements
@@ -71,7 +77,8 @@ ex) python gen.py --template templates/default_black.py --config templates/defau
 | grayscale  | 흑백 이미지 설정         |
 | document  | 사용할 문서 형식          |
 | checkbox  | 체크박스 데이터 추가      |
-| texture  | 스캔 이미지 텍스쳐 설정     |
+| texture  | 스캔 이미지 텍스쳐 설정, 문서 회전 설정      |
+| background  | 배경 이미지 설정, 전체 이미지 크기 설정   |
 | corpus  | 단어를 생성할 corpus 속성, 문장 길이 자동으로 설정  |
 | font  | font 종류(path), 글자 크기 자동으로 설정 |
 | colormap  | Default 유지              |
@@ -151,23 +158,30 @@ images/
 ### GT text   
 
 The format of `gt.txt` is as follows. Image path and label are separated by tab.   
-(`<x1>\t<y1>\t<x2>\t<y2>\t<x3>\t<y3>\t<x4>\t<y4>\t<label>`)   
+(`<x1>\t<y1>\t<x2>\t<y2>\t<x3>\t<y3>\t<x4>\t<y4>\t<label>\t<Key-value Label>`)   
 
 GT(bounding box)정보는 아래와 같이 tab으로 구분된다.   
 ```
-927	259	1184	273	1180	349	923	335	레비신정(레보플록
+927	259	1184	273	1180	349	923	335	레비신정(레보플록	value.medicine   
 ```
 
 ### Drawing Bounding Box   
 
-results 폴더 내 generate_poly_image.ipynb 참고
+tools 폴더 내 generate_poly_image.ipynb 참고   
+
+
+### Error Log   
+하단 에러는 띄어쓰기가 포함된 문장에서 단어를 예측할 때 나오는 문구로 무시해도 좋음   
+<img src="imgs/error.jpg"/>   
+
 
 ### Sample image
 
-<img src="imgs/sample_1.jpg"/>
-<img src="imgs/sample_2.png"/>
+<img src="imgs/sample.png"/>   
+<img src="imgs/sample_1.jpg"/>   
+
 
 ## Maintainer
-R&D 조정센터-알고리즘팀/제이
+R&D 조정센터-알고리즘 팀/제이 (jshwang@agilesoda.ai)
 
 +) This repo used CLOVA AI SynthTIGER | [Paper](https://arxiv.org/abs/2107.09313) | [Documentation](https://clovaai.github.io/synthtiger/)
