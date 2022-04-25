@@ -1,6 +1,8 @@
 # DocGenerator(Document Generation Tool)
 
-[![pipeline status](https://gitlab.com/twinsoda/twinreader/docgenerator/badges/main/pipeline.svg)](https://gitlab.com/twinsoda/twinreader/docgenerator/-/commits/main)
+```
+There's no plan for sharing project 😢
+```
 
 ## Contents
 
@@ -31,7 +33,7 @@
 
 ## Documentation
 
-Notion [HERE](https://www.notion.so/agilesoda/Document-Generation-Tool-f97ef09464784a3db789c06a13410107).
+Notion [HERE]
 
 ## Usage
 ### Requirements
@@ -186,6 +188,6 @@ tools 폴더 내 generate_poly_image.ipynb 참고
 
 
 ## Maintainer
-R&D 조정센터-알고리즘 팀/제이 (jshwang@agilesoda.ai)
+R&D 조정센터-알고리즘 팀/제이
 
 +) This repo used CLOVA AI SynthTIGER | [Paper](https://arxiv.org/abs/2107.09313) | [Documentation](https://clovaai.github.io/synthtiger/)
