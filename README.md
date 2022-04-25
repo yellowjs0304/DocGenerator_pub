@@ -1,6 +1,6 @@
 # DocGenerator(Document Generation Tool)
-    
-    There's no plan for sharing project 😢
+
+[![pipeline status](https://gitlab.com/twinsoda/twinreader/docgenerator/badges/main/pipeline.svg)](https://gitlab.com/twinsoda/twinreader/docgenerator/-/commits/main)
 
 ## Contents
 
@@ -24,12 +24,14 @@
 **Feb 11, 2022**: Add environment yaml.   
 **Mar 30, 2022**: Add new template(ID card, Driver License, Passport).   
 **Mar 31, 2022**: Add functions for sentence with spaces(like TwinReader STD)    
-**Apr 05, 2022**: Add new template(Receipt)    
+**Apr 14, 2022**: Add new template(Receipt)    
+**Apr 25, 2022**: Cleanup template codes(synthtiger/components/corpus)    
+
 
 
 ## Documentation
 
-Notion [HERE]
+Notion [HERE](https://www.notion.so/agilesoda/Document-Generation-Tool-f97ef09464784a3db789c06a13410107).
 
 ## Usage
 ### Requirements
@@ -97,13 +99,15 @@ ex) python gen.py --template templates/default_black.py --config templates/defau
     - ratio : CBOXT 비율 (<-> CBOXF : 1-ratio)
 
 - document
-    - MEB medical expenses bill, 진료비계산서영수증
-    - MC medical certificate , 진단서- IC injury certificate, 상해진단서
-    - DC death certificate, 사망진단서
-    - MES medical expenses statement , 진료비 내역서
-    - PRES prescription , 처방전
-    - PCME payment confirmation of medical expenses, 진료비납입확인서
-    
+    - type : 문서 타입
+        - MEB medical expenses bill, 진료비계산서영수증
+        - MC medical certificate , 진단서- IC injury certificate, 상해진단서
+        - DC death certificate, 사망진단서
+        - MES medical expenses statement , 진료비 내역서
+        - PRES prescription , 처방전
+        - PCME payment confirmation of medical expenses, 진료비납입확인서
+    - full_color : ["black", "blue"] : 문서 컬러 변경 현재는 블랙, 블루 버전 구현 완료   
+
 - texture : Scan Image(./resources/texture 참고) 설정   
     - paths : 이미지 경로
     - counts : 이미지 개수
@@ -182,6 +186,6 @@ tools 폴더 내 generate_poly_image.ipynb 참고
 
 
 ## Maintainer
-R&D 조정센터-알고리즘 팀/제이
+R&D 조정센터-알고리즘 팀/제이 (jshwang@agilesoda.ai)
 
 +) This repo used CLOVA AI SynthTIGER | [Paper](https://arxiv.org/abs/2107.09313) | [Documentation](https://clovaai.github.io/synthtiger/)
