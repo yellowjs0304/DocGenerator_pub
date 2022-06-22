@@ -203,10 +203,6 @@ GT(bounding box)정보는 아래와 같이 tab으로 구분된다.
 tools 폴더 내 generate_poly_image.ipynb 참고   
 
 
-### Error Log   
-하단 에러는 띄어쓰기가 포함된 문장에서 단어를 예측할 때 나오는 문구로 무시해도 좋음   
-<img src="imgs/error.jpg"/>   
-
 
 ### Sample image
 
