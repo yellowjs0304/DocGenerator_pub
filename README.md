@@ -3,7 +3,6 @@
 ```
 There's no plan for sharing project 😢
 ```
-
 ## Contents
 
   * [Documentation](#documentation)
@@ -27,13 +26,22 @@ There's no plan for sharing project 😢
 **Mar 30, 2022**: Add new template(ID card, Driver License, Passport).   
 **Mar 31, 2022**: Add functions for sentence with spaces(like TwinReader STD)    
 **Apr 14, 2022**: Add new template(Receipt)    
-**Apr 25, 2022**: Cleanup template codes(synthtiger/components/corpus)    
+**Apr 25, 2022**: Cleanup template codes(synthtiger/components/corpus)   
+**May 30, 2022**: Modify RECEIPT template(sorted box)   
+**Jun 07, 2022**: Merge CheckBox code(by.Bazzi) / Modify crawling data(for receipt)   
+**Jun 08, 2022**: Merge Cell code(by.Jin)   
+
 
 
 
 ## Documentation
 
-Notion [HERE]
+Guide Notion [HERE]
+
+About Cell generator algorithm [Link] 
+
+About Checkbox generator [Link]
+
 
 ## Usage
 ### Requirements
@@ -60,6 +68,7 @@ $ pip install -r requirements.txt
 
 
 # gen_black.sh 참고
+$ bash ./exec/gen_black.sh   
 
 $ python gen.py --template TEMPLATE
                 --config CONFIG
@@ -88,6 +97,7 @@ ex) python gen.py --template templates/default_black.py --config templates/defau
 | colormap  | Default 유지              |
 | color  | Default 유지                 |
 | style  | Default 유지                 |
+| synth_cell  | Cell 생성 관련 옵션                 |
 
 - vertical : (미구현)세로 글자 생성 시 사용될 예정
 
@@ -95,10 +105,14 @@ ex) python gen.py --template templates/default_black.py --config templates/defau
 
 - grayscale : Boolean type, 흑백 이미지 설정  
 
-- checkbox : Checkbox 이미지(./resources/cbox_image 참고) 설정
+- checkbox : Checkbox 데이터 설정
     - flag : Boolean type, 체크박스 유무 설정
     - alpha : 체크박스가 들어갈 확률
     - ratio : CBOXT 비율 (<-> CBOXF : 1-ratio)
+    - cboxt_file : CBOXT 형식(txt 포맷 by.Bazzi)
+    - cboxf_file : CBOXF 형식(txt 포맷 by.Bazzi)
+    - text_vs_img : CBOX의 구성 비율(실 데이터에서 추출한 Image or 텍스트)
+    - extracted_cbox : 실 데이터에서 추출한 CBOX Image set 경로
 
 - document
     - type : 문서 타입
@@ -131,6 +145,19 @@ ex) python gen.py --template templates/default_black.py --config templates/defau
     - weights : paths list 길이와 같아야 함
     - size : 폰트 크기 (후보 bbox의 사이즈(h)에 따라 자동 폰트 크기 설정, synthtiger/component/font/base_font.py )
     - bold : 폰트 굵기 설정
+
+- synth_cell : only Random Cell 생성 시에만 적용(templates/random_cell_black.yaml)
+    - base_shape : 기본 이미지 사이즈
+    - left/right/top/bottom margin : 상하좌우 margin 사이즈
+    - cell_size : 기본 grid cell 크기(pixel length)
+    - vertical_prob : 가로 순서 셀 생성 확률(=세로 셀 생성 경향)
+    - horizontal_prob : 세로 순서 셀 생성 확률(=가로 셀 생성 경향)
+    - min/max_cell_width : 각 single cell이 갖는 최대 grid cell 가로 길이
+    - min/max_cell_height : 각 single cell이 갖는 최대 grid cell 세로 길이
+    - line_thickness : Grid Cell 라인 두께
+    - visualize
+    - enable_color
+    - save_dir
 
 - colormap, color, style : 현재 default 유지
 
@@ -185,9 +212,13 @@ tools 폴더 내 generate_poly_image.ipynb 참고
 
 <img src="imgs/sample.png"/>   
 <img src="imgs/sample_1.png"/>   
+<img src="imgs/image2.jpg"/>   
 
 
 ## Maintainer
 R&D 조정센터-알고리즘 팀/제이
+제품개발본부-머신비전 팀/진
+제품개발본부-머신비전 팀/배찌
 
 +) This repo used CLOVA AI SynthTIGER | [Paper](https://arxiv.org/abs/2107.09313) | [Documentation](https://clovaai.github.io/synthtiger/)
+
