@@ -212,9 +212,9 @@ tools 폴더 내 generate_poly_image.ipynb 참고
 
 
 ## Maintainer
-R&D 조정센터-알고리즘 팀/제이
-제품개발본부-머신비전 팀/진
-제품개발본부-머신비전 팀/배찌
+R&D 조정센터-알고리즘 팀/제이   
+제품개발본부-머신비전 팀/진   
+제품개발본부-머신비전 팀/배찌   
 
 +) This repo used CLOVA AI SynthTIGER | [Paper](https://arxiv.org/abs/2107.09313) | [Documentation](https://clovaai.github.io/synthtiger/)
 
